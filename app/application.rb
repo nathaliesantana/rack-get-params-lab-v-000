@@ -1,3 +1,4 @@
+require 'pry'
 class Application
 
   @@items = ["Apples","Carrots","Pears"]
@@ -24,6 +25,7 @@ class Application
       end
 
     elsif req.path.match(/add/)
+      binding.pry
       item_to_add = req.params["item"]
       if @@items.include? item_to_add
         @@cart << item_to_add
